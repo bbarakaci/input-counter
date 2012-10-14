@@ -1,0 +1,28 @@
+{
+  "name": "input-counter",
+  "title": "Input Counter",
+  "description": "How many characters left?",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bbarakaci/input-counter",
+  "author": {
+    "name": "Burak Barakaci",
+    "email": "barakaci@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bbarakaci/input-counter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bbarakaci/input-counter/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bbarakaci/input-counter/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}
