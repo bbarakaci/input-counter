@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <textarea id="area" maxlength="140"></textarea>
+        <p>
+            <output id="area-counter"></output> characters left
+        </p>
+        <script src="ftools-events.js"></script>
+        <script src="on-input-change.js"></script>
+        <script src="input-counter.js"></script>
+        <script>
+            (function(){
+                var area = document.getElementById('area');
+                var counter = document.getElementById('area-counter');
+                new InputCounter(area,counter);
+            })()
+        </script>
+    </body>
+</html>
