@@ -1,3 +1,6 @@
+/*! Input Counter - v0.1.0 - 2012-10-14
+* https://github.com/bbarakaci/input-counter
+ Licensed MIT */
 var inputCounter = (function ($) {
     function InputCounter (inputElement, counterElement, options) {
         this._input = inputElement;

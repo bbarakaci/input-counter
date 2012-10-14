@@ -7,7 +7,6 @@ module.exports = function(grunt) {
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     concat: {
       dist: {
@@ -19,6 +18,10 @@ module.exports = function(grunt) {
       dist: {
         src: '<config:concat.dist.dest>',
         dest: 'dist/<%= pkg.name %>.min.js'
+      },
+      packed: {
+          src: ['libs/on-input-change.min.js', '<config:min.dist.dest>'],
+          dest: 'dist/<%= pkg.name %>.full.min.js'
       }
     },
     qunit: {
@@ -53,6 +56,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint qunit');
+  grunt.registerTask('make', 'lint qunit concat min');
 
 };

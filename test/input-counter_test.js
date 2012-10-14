@@ -1,7 +1,7 @@
 /*global QUnit:false, module:false, test:false, asyncTest:false, expect:false*/
 /*global start:false, stop:false ok:false, equal:false, notEqual:false, deepEqual:false*/
 /*global notDeepEqual:false, strictEqual:false, notStrictEqual:false, raises:false*/
-(function($) {
+(function() {
 
   /*
     ======== A Handy Little QUnit Reference ========
@@ -22,43 +22,31 @@
       raises(block, [expected], [message])
   */
 
-  module('jQuery#awesome', {
-    // This will run before each test in this module.
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
+  // module('jQuery#awesome', {
+  //   // This will run before each test in this module.
+  //   setup: function() {
+  //     this.elems = $('#qunit-fixture').children();
+  //   }
+  // });
+
+  test('input counter', function() {
+      var area = document.getElementById('area');
+      var counter = document.getElementById('area-counter');
+      var ic = new inputCounter.InputCounter(area, counter);
+      var oninput = ic._oninputchange;
+      
+      area.focus();
+
+      area.value = 'hello';
+      
+      oninput._check();
+      
+      stop();
+      
+      setTimeout(function () {
+          equal(counter.innerHTML, 135, 'counts right');
+          start();
+      }, 200);
   });
 
-  test('is chainable', function() {
-    expect(1);
-    // Not a bad test to run on collection methods.
-    strictEqual(this.elems.awesome(), this.elems, 'should be chainable');
-  });
-
-  test('is awesome', function() {
-    expect(1);
-    strictEqual(this.elems.awesome().text(), 'awesome0awesome1awesome2', 'should be awesome');
-  });
-
-  module('jQuery.awesome');
-
-  test('is awesome', function() {
-    expect(2);
-    strictEqual($.awesome(), 'awesome.', 'should be awesome');
-    strictEqual($.awesome({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
-  });
-
-  module(':awesome selector', {
-    // This will run before each test in this module.
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
-  });
-
-  test('is awesome', function() {
-    expect(1);
-    // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':awesome').get(), this.elems.last().get(), 'knows awesome when it sees it');
-  });
-
-}(jQuery));
+}());

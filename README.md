@@ -1,39 +1,42 @@
 # Input Counter
 
-How many characters left?
+Character counter for textareas, input fields.
+
+## Demo
+
+http://bbarakaci.github.com/input-counter
 
 ## Getting Started
-Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/bbarakaci/input-counter/master/dist/input-counter.min.js
-[max]: https://raw.github.com/bbarakaci/input-counter/master/dist/input-counter.js
+Download [input-counter.full.min.js][min]
 
-In your web page:
+[min]: https://raw.github.com/bbarakaci/input-counter/master/dist/input-counter.full.min.js
 
-```html
-<script src="jquery.js"></script>
-<script src="dist/input-counter.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
-</script>
-```
+Add scripts to your page:
 
-## Documentation
-_(Coming soon)_
+    <script src="jquery.js"></script>
+    <script src="dist/input-counter.full.min.js"></script>
 
-## Examples
-_(Coming soon)_
+Example markup: Make sure to set `maxlength` attribute to the input. That is good html.
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
+    <textarea id="area" maxlength="140"></textarea>
+    <p>
+        <output id="area-counter"></output> characters left
+    </p>
 
-_Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "src" subdirectory!_
+## Example Usage
+    <script>
+        (function(){
+            var area = document.getElementById('area');
+            var counter = document.getElementById('area-counter');
+            new inputCounter.InputCounter(area, counter);
+        })()
+    </script>
 
-## Release History
-_(Nothing yet)_
+## More info
 
-## License
-Copyright (c) 2012 Burak Barakaci  
-Licensed under the MIT license.
+Input Counter needs [On Input Change][oic]. Above file already contains it. Standalone version can be found in dist directory. Source is in the src directory.
+
+[oic]: https://github.com/bbarakaci/on-input-change
+
+
