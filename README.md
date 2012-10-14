@@ -15,7 +15,7 @@ Download [input-counter.full.min.js][min]
 Add scripts to your page:
 
     <script src="jquery.js"></script>
-    <script src="dist/input-counter.full.min.js"></script>
+    <script src="input-counter.full.min.js"></script>
 
 Example markup: Make sure to set `maxlength` attribute to the input. That is good html.
 
